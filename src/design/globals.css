@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-campus-border;
+  }
+
+  body {
+    @apply bg-campus-bg-deep text-campus-text-primary font-sans;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-campus-bg-primary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-campus-bg-tertiary rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-campus-bg-hover;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-campus-bg-card/80 backdrop-blur-xl border border-campus-border rounded-2xl shadow-card;
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:bg-campus-bg-hover hover:shadow-card-hover hover:border-campus-border-light transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-campus-primary to-campus-accent bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply border border-transparent bg-gradient-to-r from-campus-primary/20 to-campus-accent/20;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-campus-primary to-campus-primary-dark hover:from-campus-primary-light hover:to-campus-primary text-white font-medium rounded-xl px-6 py-2.5 transition-all duration-200 shadow-glow hover:shadow-glow-strong active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply bg-campus-bg-tertiary hover:bg-campus-bg-hover text-campus-text-primary border border-campus-border hover:border-campus-border-light font-medium rounded-xl px-6 py-2.5 transition-all duration-200 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply text-campus-text-secondary hover:text-campus-text-primary hover:bg-campus-bg-hover rounded-xl px-4 py-2 transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-campus-bg-secondary border border-campus-border rounded-xl px-4 py-2.5 text-campus-text-primary placeholder:text-campus-text-muted focus:outline-none focus:ring-2 focus:ring-campus-primary/50 focus:border-campus-primary transition-all duration-200;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-campus-text-secondary hover:text-campus-text-primary hover:bg-campus-bg-hover transition-all duration-200 cursor-pointer;
+  }
+
+  .sidebar-item-active {
+    @apply bg-campus-primary/10 text-campus-primary border-l-2 border-campus-primary;
+  }
+
+  .stat-card {
+    @apply glass-card p-4 flex flex-col gap-2;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-campus-primary/15 text-campus-primary-light;
+  }
+
+  .badge-success {
+    @apply badge bg-campus-success/15 text-emerald-400;
+  }
+
+  .badge-warning {
+    @apply badge bg-campus-warning/15 text-amber-400;
+  }
+
+  .badge-danger {
+    @apply badge bg-campus-danger/15 text-red-400;
+  }
+}
+
+@layer utilities {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
